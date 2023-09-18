@@ -4,9 +4,9 @@ body {
   font-size: 1.6rem;
 }
 header {
-  background-color: #034C8C;
+  background-color: #687B8C;
   padding: 1.5rem;
-  border-bottom: 1rem solid #185a9d;
+  border-bottom: 1rem solid #365673;
 }
 header h1 {
   text-align: center;
@@ -74,7 +74,7 @@ form {
 }
 
  input[type="submit"] {
-  background-color: #034C8C;
+  background-color: #4AB0D9;
   margin: 2rem auto 0 auto;
   display: block;
   padding: 1rem 3rem;
@@ -92,7 +92,7 @@ form {
   }
 }
  input[type="submit"]:hover {
-  background-color: #185a9d;
+  background-color: #44AFF2;
 }
 
 
@@ -153,6 +153,8 @@ form {
 }
 .clima {
   text-align: center;
+  background-color: #2585D9;
+  color: #fff;
 }
 .clima > p:first-of-type {
   font-size: 4rem;
@@ -163,6 +165,7 @@ form {
 }
 .clima p {
   margin: 0;
+  font-weight: 600;
 }
 .clima p span {
 font-size: 1.2rem;
