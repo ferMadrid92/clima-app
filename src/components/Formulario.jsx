@@ -5,7 +5,7 @@ const Formulario = () => {
 
     const [alerta, setAlerta] = useState('')
 
-    const { busqueda, datosBusqueda, consultarCLima, setResultado } = useClima()
+    const { busqueda, datosBusqueda, consultarCLima, setResultado, resultado, obtenerPronostico, setPronostico } = useClima()
 
     const { ciudad, pais } = busqueda
 
@@ -18,6 +18,7 @@ const Formulario = () => {
         setAlerta('')
         setResultado({})
         consultarCLima(busqueda)
+        setPronostico({})
     }
 
     return (
@@ -59,6 +60,13 @@ const Formulario = () => {
                     type="submit"
                     value="Consultar Clima"
                 />
+            {Object.keys(resultado).length === 0 ? null : (
+                <input
+                    type="button"
+                    value="Ver Pronóstico"
+                    onClick={() => obtenerPronostico()}
+                />
+            )}
         </form>
         </div>
     )
