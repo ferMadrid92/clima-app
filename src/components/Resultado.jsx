@@ -26,13 +26,9 @@ const Resultado = () => {
 
     const {name, local_names} = coords || {}
 
-    //console.log(coords)
-    //console.log(resultado)   
-    //console.log(list)
-
   return (
     <>
-      <div className={!noche ? "contenedor clima dia" : "contenedor clima noche" }>
+      <div id="resultadoClima" className={!noche ? "contenedor clima dia" : "contenedor clima noche" }>
         <h2>{local_names?.es ? local_names?.es : name }:</h2>
         <p>{parseInt(temp)} <span>°C</span></p>
         <div className="clima-descripcion">
@@ -49,7 +45,7 @@ const Resultado = () => {
         </div>
         <div className="temp-datos">
           <p>Amanecer: {formatearHoras(sunrise)}</p>
-          <p>Puesta de sol: {formatearHoras(sunset)}</p>
+          <p>Atardecer: {formatearHoras(sunset)}</p>
         </div>
       </div>
     </>
