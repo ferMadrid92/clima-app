@@ -24,7 +24,7 @@ const Formulario = () => {
     return (
         <div className="contenedor">
             {alerta && <p className="alerta">{alerta}</p>}
-
+            <h1><span>Consulta el Clima</span> en tu Ciudad</h1>
         <form
             onSubmit={handleSubmit}
         >

@@ -21,11 +21,12 @@ export const filtrarLista = (list, condicion) => {
 export const formatearFecha = fecha => {
   const fechaNueva = new Date (fecha)
   const opciones = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: "2-digit"
+      //year: 'numeric',
+      //month: 'long',
+      //day: 'numeric',
+      weekday: 'long'
+      //hour: '2-digit',
+      //minute: "2-digit"
   }
   return fechaNueva.toLocaleDateString('es-ES', opciones)
 }

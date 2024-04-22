@@ -28,7 +28,7 @@ const Resultado = () => {
 
   return (
     <>
-      <div id="resultadoClima" className={!noche ? "contenedor clima dia" : "contenedor clima noche" }>
+      <div className={!noche ? "contenedor clima dia" : "contenedor clima noche" }>
         <h2>{local_names?.es ? local_names?.es : name }:</h2>
         <p>{parseInt(temp)} <span>°C</span></p>
         <div className="clima-descripcion">

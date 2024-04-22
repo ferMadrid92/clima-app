@@ -5,9 +5,6 @@ function App() {
 
   return (
     <ClimaProvider>
-      <header>
-        <h1>Clima en tu Ciudad</h1>
-      </header>
       <AppClima />
     </ClimaProvider>
   )

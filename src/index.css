@@ -7,29 +7,35 @@ html {
 
 body {
   font-family: 'Hubballi', cursive;
-  background-color: #f1f5f9;
+  background-color: #0B121E;
   font-size: 1.6rem;
 }
-header {
-  padding: 1.5rem;
-  border-bottom: 0.2rem solid #A6A57E;
-}
-header h1 {
+
+h1 {
   text-align: center;
-  color: #496A7B;
+  color: #fff;
   font-family: 'Inter', sans-serif;
-  font-size: 3rem;
-  margin:0;
+  font-size: 2.2rem;
+  margin:0 0 2rem 0;
+}
+h1 span {
+  display: block;
 }
 .dos-columnas {
-  display: grid;  
+  display: grid;
+  align-items: center;
 }
 .dos-columnas p {
   text-align: center;
+  color: #FFF;
 }
 @media (min-width: 768px) {
   .dos-columnas {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .dos-columnas {
     gap: 4rem;
   }
 }
@@ -43,18 +49,14 @@ main {
   }
  }
 .contenedor {
-  background-color: white;
+  background-color: #202B3C;
   padding: 3rem;
   width: 100%;
-  border-bottom: 1px solid #c9c9c9;
 }
 @media(min-width:768px) {
   .contenedor {
     margin: 0 auto;
-    -webkit-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
-    -moz-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
-    box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
-    border-radius: .5rem;
+    border-radius: 1rem;
   }
 }
 form {
@@ -66,6 +68,7 @@ form {
 }
 .campo label {
   display: block;
+  color: #fff;
 
 }
 .campo input,
@@ -73,7 +76,7 @@ form {
   /** all: unset; **/
   border: 1px solid #cbd5e1;
   width: 100%;
-  border-radius: 1rem;
+  border-radius: .6rem;
   padding: .5rem;
 }
 .alerta {
@@ -83,7 +86,7 @@ form {
 
  input[type="submit"],
  input[type="button"] {
-  background-color: #828E94;
+  background-color: #0294FE;
   margin: 2rem auto 0 auto;
   display: block;
   padding: 1rem 3rem;
@@ -94,6 +97,7 @@ form {
   border: none;
   width: 100%;
   transition: background-color .3s ease;
+  border-radius: .6rem;
 }
 @media (min-width: 768px) {
    input[type="submit"],
@@ -103,8 +107,103 @@ form {
 }
  input[type="submit"]:hover,
  input[type="button"]:hover {
-  background-color: #A2B0B8;  
+  background-color: #0363a7;  
   cursor: pointer;
+}
+
+
+/* Respuesta clima */
+.clima {
+  text-align: center;
+  color: #fff;
+  padding: 4.6rem 0;
+}
+.dia {
+  background-color: #099A91;
+}
+.noche {
+  background-color: #010524;
+}
+.clima > p:first-of-type {
+  font-size: 4rem;
+  font-family: 'Inter', sans-serif;
+}
+.clima-descripcion p {
+  font-weight: 300;
+}
+.clima-descripcion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clima h2 {
+  margin-top:0 ;
+}
+.clima p {
+  margin: 0;
+  font-weight: 600;
+}
+.clima p span,
+.datos-pronostico p span {
+font-size: 1.2rem;
+vertical-align: super;
+}
+.temp-datos {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.heading-pronostico {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  padding: 3rem 2rem;
+}
+.pronostico {
+  background-color: #202B3C;
+  margin: 0 auto 3rem auto;
+  padding: 0 2rem;
+}
+@media (min-width: 768px) {
+  .pronostico {
+    padding: 0 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .pronostico {
+    width: 75rem;
+    border-radius: 1rem;
+  }
+  
+}
+.datos-pronostico {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-top:  1px solid #f1f5f9;
+  align-items: center;
+  color: #fff;
+  padding: 2rem 0;
+}
+.datos-pronostico:first-of-type {
+  border-top: none;
+}
+.datos-pronostico p {
+  margin: .2rem 0;
+  text-align: center;
+}
+@media(min-width: 768px) {
+  .datos-pronostico {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+.datos-pronostico img {
+  width: 100px;
+  height: auto;
 }
 
 /* Spinner */
@@ -162,77 +261,4 @@ form {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
-}
-/* Respuesta clima */
-.clima {
-  text-align: center;
-  color: #fff;
-}
-.dia {
-  background-color: #5C9DF2;
-}
-.noche {
-  background-color: #0A1C26;
-}
-.clima > p:first-of-type {
-  font-size: 4rem;
-  font-family: 'Inter', sans-serif;
-}
-.clima-descripcion p {
-  color: #e1e1e1;
-  font-weight: 300;
-}
-.clima-descripcion {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.clima h2 {
-  margin-top:0 ;
-}
-.clima p {
-  margin: 0;
-  font-weight: 600;
-}
-.clima p span,
-.datos-pronostico p span {
-font-size: 1.2rem;
-vertical-align: super;
-}
-.temp-datos {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-.heading-pronostico {
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 3rem 2rem;
-}
-.pronostico {
-  background-color: #31383B;
-}
-.datos-pronostico {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border-top:  1px solid #f1f5f9;
-  align-items: center;
-  color: #fff;
-  padding: 2rem 0;
-}
-.datos-pronostico p {
-  margin: .2rem 0;
-}
-@media(min-width: 768px) {
-  .datos-pronostico {
-    flex-direction: row;
-    padding: 0;
-  }
-}
-.datos-pronostico img {
-  width: 100px;
-  height: auto;
 }

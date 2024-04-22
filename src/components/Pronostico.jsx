@@ -7,13 +7,13 @@ const Pronostico = () => {
 
     const [pronosticoFiltro, setPronosticoFiltro] = useState([])
 
-    const { resultado, cargando, cargandoPronostico, noResultado, pronostico, coords } = useClima()
+    const { resultado, cargandoPronostico, pronostico, coords } = useClima()
     
   useEffect(() => {
     const obtenerDatos = async () => {
       if (Object.values(pronostico).length !== 0) {
         const datosFiltrados = await filtrarLista(list, (elemento, indice) => {
-          return indice % 5 === 0
+          return indice % 8 === 0
         })
         setPronosticoFiltro(datosFiltrados)
       } else {
@@ -30,10 +30,10 @@ const Pronostico = () => {
   return (
     <>
         {cargandoPronostico ? <Spinner/> : (
-            <section id="pronostico" className="pronostico">       
+            <section className="pronostico">       
             {Object.values(pronosticoFiltro).length !== 0 ? (
                 <>
-                <h2 className="heading-pronostico">Pronóstico del clima en {local_names?.es ? local_names?.es : name }</h2>
+                <h2 className="heading-pronostico">Pronóstico en {local_names?.es ? local_names?.es : name }</h2>
                 {pronosticoFiltro.map((elemento) => (
                     <div className="datos-pronostico" key={elemento.dt}>
                     <p>
@@ -45,14 +45,11 @@ const Pronostico = () => {
                         alt={elemento.weather[0].description}
                     />
                     <p>
-                        Mín:{" "}
+                        
                         <b>
                         {elemento.main.temp_min}
-                        <span>°C</span>
-                        </b>
-                    </p>
-                    <p>
-                        Max:{" "}
+                        <span>°C</span>{" "}
+                        </b>/ {" "}
                         <b>
                         {elemento.main.temp_max}
                         <span>°C</span>
